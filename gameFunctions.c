@@ -1,19 +1,20 @@
 #include "main.h"
 
-bool rollDice(struct players p){
+bool rollDice(players *p){
 	printf("Roll your dice by pressing \'1\'\n");
-	scanf("%d", &p.playerChoice_2);
-	if(p.playerChoice_2 == 1){
-		printf("\nRolling.....");
-		p1.playerDiceCount = generateDiceCount();
+	scanf("%d", &p->playerChoice_2);
+	if(p->playerChoice_2 == 1){
+		printf("Rolling.....\n");
+		/*p->playerDiceCount = generateDiceCount();
 		sleep(2);
-		printf("%c, your dice count is %d!", p1.playerInitial, p1.playerDiceCount);
+		printf("%c, your dice count is %d!", p->playerInitial, p->playerDiceCount);
 		if(checkForSnakeBite()){
 		}
 		if(winCheck()){
 		}
 		printf("You are Moving forward");
-		updateAndDisplay();
+		updateAndDisplay();*/
+		return true;
 	}
 	else
 		return false;
@@ -21,16 +22,18 @@ bool rollDice(struct players p){
 
 
 void startGame(players *p1, players *p2){
+	bool isContinuePlay = true;
 	printf("#Player 1 type your Initial: ");
-	scanf("%c", p1->playerInitial);
-	printf("\n#Player 2 type your Initial: ");
-	scanf("%c", p2->playerInitial);
+	scanf(" %c", &p1->playerInitial);
+	printf("#Player 2 type your Initial: ");
+	scanf(" %c", &p2->playerInitial);
 	printf("LETS PLAY!!!!!\n");
 	printf("This is the Board\n");
-	displayBoard();
-	printf("NOTE: Players can exit anytime by pressing \'0\'");
+	//displayBoard();
+	printf("NOTE: Players can exit anytime by pressing \'0\'\n");
 	while(isContinuePlay){
 		if(rollDice(p1)){
+			printf("success\n");
 		}
 		else{
 			isContinuePlay = false;

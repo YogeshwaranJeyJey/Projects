@@ -3,7 +3,7 @@
 
 #include <windows.h>
 
-bool isContinuePlay = true;
+extern bool isContinuePlay;
 typedef struct{
 	char playerInitial;
 	int playerDiceCount;
@@ -11,6 +11,6 @@ typedef struct{
 	int playerChoice_2;
 }players;
 
-void startGame();
+void startGame(players *p1, players *p2);
 
 #endif

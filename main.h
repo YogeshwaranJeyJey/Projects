@@ -2,10 +2,10 @@
 #define MAIN_H
 
 #include <stdio.h>
-#include <bool.h>
+#include <stdbool.h>
 #include "gameFunctions.h"
 
-bool isContinue = true;
-int playerChoice_1;
+extern bool isContinue;
+extern int playerChoice_1;
 
 #endif
